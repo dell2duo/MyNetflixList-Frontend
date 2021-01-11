@@ -26,7 +26,6 @@ export default function Home() {
   useEffect(() => {
     api.post("/list_movies", { id_perfil: perfil.id }).then((result) => {
       setLista(result.data);
-      console.log(lista);
     });
 
     apiMovies
@@ -60,7 +59,6 @@ export default function Home() {
       )
       .then((result) => {
         setResultadoPesquisarNome(result.data.results);
-        // console.log(resultadoPesquisarNome);
       });
   }
 
@@ -76,7 +74,6 @@ export default function Home() {
 
   async function nextDescPage(e) {
     setDescubertasPage(descubertasPage + 1);
-    // console.log(descubertasPage);
     await apiMovies
       .get(
         `/discover/movie?api_key=${API_KEY}&language=${LANG}&sort_by=popularity.desc&include_adult=false&include_video=false&page=${descubertasPage}`
@@ -87,7 +84,6 @@ export default function Home() {
   }
 
   async function previousDescPage(e) {
-    // console.log(descubertasPage);
     if (descubertasPage === 1) {
       return;
     }
@@ -111,7 +107,6 @@ export default function Home() {
       )
       .then((result) => {
         setResultadoPesquisarNome(result.data.results);
-        // console.log(resultadoPesquisarNome);
       });
   }
 
@@ -128,7 +123,6 @@ export default function Home() {
       )
       .then((result) => {
         setResultadoPesquisarNome(result.data.results);
-        // console.log(resultadoPesquisarNome);
       });
   }
 

@@ -12,7 +12,6 @@ import { Card, Title, Image, Container, Buttons } from "./styles";
 
 export default function MyList(props) {
   async function watched(e, filme) {
-    console.log(filme);
     api.post("/watched", filme).then((result) => {
       props.update();
       alert(result.data.msg);
