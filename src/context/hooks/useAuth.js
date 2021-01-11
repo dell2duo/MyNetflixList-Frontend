@@ -8,8 +8,8 @@ export default function useAuth() {
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState({});
   const [perfil, setPerfil] = useState({});
-  const API_KEY = "fb034f86285a9f87f4c7c29c9a20eed5";
-  const LANG = "pt-BR";
+  const API_KEY = process.env.REACT_APP_API_KEY;
+  const LANG = process.env.REACT_APP_LANG;
 
   useEffect(() => {
     const token = localStorage.getItem("Token");
